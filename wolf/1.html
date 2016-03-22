@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{
+	padding: 0;
+	margin:0;
+}
+	.bg{
+		width: 320px;
+		height: 480px;
+		background-image:url(img/myrank_bg.jpg);
+		margin:0 auto;
+		position: relative;
+	}
+	.bg div{
+		width: 108px;
+		height: 101px;
+	}
+	#wolf1{
+		position: absolute;
+		/*background-color: red;*/
+		width: 108px;
+		height: 101px;
+		left:100px;
+		top:115px;
+	}
+		.bg div:nth-child(1) {
+			position: absolute;
+			left:100px;
+			top:115px;
+			display: block;
+		}
+		.bg div:nth-child(2) {
+			position: absolute;
+			left:21px;
+			top:160px;
+			display: none;
+		}
+		.bg div:nth-child(3) {
+			position: absolute;
+			left:190px;
+			top:142px;
+			display: none;
+		}
+		.bg div:nth-child(4) {
+			position: absolute;
+			left:18px;
+			top:221px;
+			display: none;
+		}
+		.bg div:nth-child(5) {
+			position: absolute;
+			left:103px;
+			top:192px;
+			display: none;
+		}
+		.bg div:nth-child(6) {
+			position: absolute;
+			left:200px;
+			top:212px;
+			display: none;
+		}
+		
+		.bg div:nth-child(7) {
+			position: absolute;
+			left:33px;
+			top:294px;
+			display: none;
+		}
+		.bg div:nth-child(8) {
+			position: absolute;
+			left:122px;
+			top:274px;
+			display: none;
+		}
+		.bg div:nth-child(9) {
+			position: absolute;
+			left:210px;
+			top:295px;
+			display: none;
+		}
+</style>
+<body>
+	<div class="bg">
+		<div id="wolf1"></div>
+		<div id="wolf2"></div>
+		<div id="wolf3"></div>
+		<div id="wolf4"></div>
+		<div id="wolf5"></div>
+		<div id="wolf6"></div>
+		<div id="wolf7"></div>
+		<div id="wolf8"></div>
+		<div id="wolf9"></div>
+		
+
+	</div>
+	<img src="img/h0.png" alt="" style="display: none;">
+	<img src="img/h1.png" alt="" style="display: none;">
+	<img src="img/h2.png" alt="" style="display: none;">
+	<img src="img/h3.png" alt="" style="display: none;">
+	<img src="img/h4.png" alt="" style="display: none;">
+	<img src="img/h5.png" alt="" style="display: none;">
+	<img src="img/h6.png" alt="" style="display: none;">
+	<img src="img/h7.png" alt="" style="display: none;">
+	<img src="img/h8.png" alt="" style="display: none;">
+
+</body>
+<script type="text/javascript">
+	var w1=document.getElementById("wolf1");
+	var bg=document.getElementsByClassName("bg");
+	var wolf=bg[0].getElementsByTagName("div");
+	//
+	var count=0;
+	var time1;
+	var ch=0;
+	var z=11;
+	var c=1;
+	var x=true;
+	var y="h";
+	var ram=0;	
+
+	//
+    var ram1=0
+    var ch1=0;
+	var z1=11;
+	var c1=1;
+	var x1=true;
+	var y1="h";
+	var count1=0;
+	var time=setInterval(changebg,100);
+	// var time3=setInterval(changebg1,300);
+    //duoci array
+    var ducarr=[];
+    var time2;
+	function rand(){
+        var ram=parseInt(Math.random()*9); 
+        if(ch==ram){
+          ram=parseInt(Math.random()*9);
+         //rand();//这有点怪
+         //console.log(ram);
+        }
+		return ram; 
+	}
+	function rand1(max,min){
+		return parseInt(Math.random()*(max-min+1)+min);
+	}
+
+
+	function changebg(){	
+		haha();
+	//haha();	 
+		// haha1();
+	}
+	// function changebg1(){
+	
+ //        }
+// function changebg1(){
+// 		haha1();
+// 	}
+//dalang
+
+for(var i=0;i<wolf.length;i++){
+	(function(i){
+	wolf[i].onclick=function(){
+   		   //fuck();
+    count=6;
+    x=false;
+    z=11;
+	}
+	})(i);
+}
+
+// function fuck(){         	
+//    		    // clearInterval(time);
+//    		    console.log(2);	
+// 	}
+
+// wolf[0].onclick=function(){
+//    		    clearInterval(time);
+//    		    console.log(1);
+// 	}
+//hover
+// for(var h=0;h<wolf.length;h++){
+// 	wolf[h].onmouseenter=function(){	
+// 		// clearInterval(time);
+// 		// setTimeout()
+// 	}
+// }
+// for(var cc=0;cc<wolf.length;cc++){
+// 	wolf[cc].onmouseout=function(){	
+	
+// 		// time=setInterval(changebg,120);
+	    
+// 	}
+// }
+
+
+
+//chuping
+function haha(){
+       
+	    wolf[ram].style.background='url(img/'+y+'.png)';
+		wolf[ram].style.backgroundPosition=-108*count+"px";
+		ducarr.push(ram);
+		if(count==5||count==9&&z==11){
+           z=10;
+		}
+		if(z==11){
+			count++;
+		}
+		else{	
+		    	count--;
+		    }
+			if(count==0&&x==true){
+				z=12;
+			    count=5;
+			}
+			if(count==6&&x==false){
+				z=12;
+			    count=5;
+			}
+			
+		
+		if(count==5&&x==false&&z==12){
+			// wolf[ram].style.display="none";
+          	x=true;
+		}
+
+
+
+
+		if(count>=5&&x==true&&z==12){
+			//换位	
+			wolf[ram].style.background='url(img/kong.png)';
+			// wolf[ram].style.backgroundPosition=-108*6+"px";
+			for(var ff=0;ff<wolf.length;ff++){
+				for(var fff=0;fff<ducarr.length;fff++){
+					if(ff==ducarr[fff]){
+							wolf[ff].style.display="block";
+					}
+					else{
+						wolf[ff].style.display="none";
+					}					
+				}
+				
+
+		    }
+            var ccc=rand1(2,1);
+    		ccc==1?y="h":y="x";
+		   	 	ch=ram;//gei ch值
+				ram=rand();
+				// console.log("haha:"+ram);
+				wolf[ram].style.background='url(img/'+y+'.png)';
+		   		wolf[ram].style.backgroundPosition=0+"px";
+			// console.log(ram);
+
+				wolf[ram].style.display="block";
+				count=0;//bg position
+				z=11;
+				x=true;
+				clearInterval(time2);
+				ducarr.pop();
+
+
+		}
+	
+}
+
+// function haha1(){
+
+// 	wolf[ram1].style.background='url(img/'+y+'.png)';
+// 	wolf[ram1].style.backgroundPosition=-108*count+"px";
+// 		if(count1==5||count1==9&&z==11){
+//            z1=10;
+// 		}
+// 		if(z1==11){
+// 			count++;
+// 		}
+// 		else{	
+// 		    	count--;
+// 		    }
+// 			if(count==0){
+// 				z1=12;
+// 			    count=9;
+// 			}
+// 			if(count==6&&x==false){
+// 				z1=12;
+// 			    count=9;
+// 			}
+			
+		
+// 		if(count==9&&x1==false&&z1==12){
+// 			// wolf[ram].style.display="none";
+//           	x1=true;
+// 		}
+
+// 		if(count>=7&&x1==true&&z1==12){
+// 			//换位	
+// 			wolf[ram1].style.backgroundPosition=-108*6+"px";
+// 			// for(var ff=0;ff<wolf.length;ff++){
+// 			// 	wolf[ff].style.display="none";
+// 		 //    }
+// 		    var ccc=rand1(2,1);
+//     		ccc==1?y="h":y="x";
+// 		   	 	ch1=ram1;//gei ch值
+// 				ram1=rand();
+// 				wolf[ram1].style.background='url(img/'+y+'.png)';
+// 		   		wolf[ram1].style.backgroundPosition=0+"px";
+// 			// console.log(ram);
+// 			    if(var xx=0;xx<ducarr.length)
+// 				wolf[ram1].style.display="block";
+// 				count=0;//bg position
+// 				z1=11;
+// 				x1=true;	
+			
+// 		}
+	
+// }
+
+
+</script>
+</html>
